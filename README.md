@@ -11,9 +11,10 @@ transformers==4.5.0<br>
 
 ## Pretrained Model
 MacBERT: https://huggingface.co/hfl/chinese-macbert-large<br>
-BERT: https://huggingface.co/bert-base-chinese<br>
-BERT-wwm: https://huggingface.co/hfl/chinese-bert-wwm<br>
-RoBERTa: https://huggingface.co/hfl/chinese-roberta-wwm-ext<br>
+BERT: https://huggingface.co/bert-base-uncased<br>
+BART: https://huggingface.co/facebook/bart-base<br>
+RoBERTa: https://huggingface.co/FacebookAI/roberta-base<br>
+XLNet: https://huggingface.co/xlnet/xlnet-base-cased<br>
 
 We use the learning rate of 2e-5 for all pretrained Model
 
