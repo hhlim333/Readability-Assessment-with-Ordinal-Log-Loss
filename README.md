@@ -24,7 +24,7 @@ Most of the code is based on https://github.com/yjang43/pushingonreadability_tra
 
 1. Copy and go to pushingonreadability_transformers-master folder
 
-2. 5-Fold of a dataset in data folder.
+2. 5-Fold datasets in data folder.
 - Stratified folds of data will save under file name _"data/onestop.{k}.{type}.csv"_.
 _k_ means _k_-th of the K-Fold and _type_ is either train, valid, or test.
 
