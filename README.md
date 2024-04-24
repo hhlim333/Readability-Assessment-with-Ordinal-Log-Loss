@@ -16,7 +16,8 @@ BART: https://huggingface.co/facebook/bart-base<br>
 RoBERTa: https://huggingface.co/FacebookAI/roberta-base<br>
 XLNet: https://huggingface.co/xlnet/xlnet-base-cased<br>
 
-We use the learning rate of 2e-5 for all pretrained Model
+For English experiments, we use the learning rate of 2e-5 for BERT and 3e-5 for the other pre-trained language models.<br>
+For Chinese experiments, we use the learning rate of 2e-5 for MacBERT.
 
 # How to Run
 Most of the code is based on https://github.com/yjang43/pushingonreadability_transformers
