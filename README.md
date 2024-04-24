@@ -43,5 +43,7 @@ python inference.py --checkpoint_path checkpoint/mainland.chinese-macbert-large.
 
 5. Collect output probability for each grade.
 
+6. Use NerualModelFullFoldResult.ipynb to evaluate the result
+
 ## References
 Pushing on Text Readability Assessment: A Transformer Meets Handcrafted Linguistic Features<br>
