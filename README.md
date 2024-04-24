@@ -2,7 +2,7 @@
 19th Workshop on Innovative Use of NLP for Building Educational Applications
 
 ## Abstract
-Automatic Readability Assessment (ARA) pre- dicts the level of difficulty of a text, e.g. at Grade 1 to Grade 12. ARA is an ordinal clas- sification task since the predicted levels fol- low an underlying order, from easy to diffi- cult. However, most neural ARA models ig- nore the distance between the gold level and predicted level, treating all levels as indepen- dent labels. This paper investigates whether distance-sensitive loss functions can improve ARA performance. We evaluate a variety of loss functions on neural ARA models, and show that ordinal log-loss can produce statisti- cally significant improvement over the standard cross-entropy loss in terms of adjacent accuracy in a majority of our datasets.
+Automatic Readability Assessment (ARA) predicts the level of difficulty of a text, e.g. at Grade 1 to Grade 12. ARA is an ordinal classification task since the predicted levels follow an underlying order, from easy to difficult. However, most neural ARA models ignore the distance between the gold level and predicted level, treating all levels as independent labels. This paper investigates whether distance-sensitive loss functions can improve ARA performance. We evaluate a variety of loss functions on neural ARA models, and show that ordinal log-loss can produce statistically significant improvement over the standard cross-entropy loss in terms of adjacent accuracy in a majority of our datasets.
 
 ## Tools
 scikit-learn==0.24.1<br>
@@ -41,20 +41,7 @@ python train.py --corpus_name mainland --model chinese-macbert-large --learning_
 python inference.py --checkpoint_path checkpoint/mainland.chinese-macbert-large.0.14 --data_path data/mainland.0.test.csv
 ```
 
-5. Collect features and combine with output probability.
-
-6. Go to pushingonreadability_traditional_ML-master folder.
-
-7. Create result folder and put the combination of output probability and features file into the folder. 
-    For example: mainland.0.train.combined.csv,mainland.0.test.combined.csv
-    
-8. Fed into Classifiers
-```bash
-python nonneural-classification.py -r
-```
-- -r means random forest classifier<br>
-- -s means SVM<br>
-- -g means XGB<br>
+5. Collect output probability for each grade.
 
 ## References
 Pushing on Text Readability Assessment: A Transformer Meets Handcrafted Linguistic Features<br>
