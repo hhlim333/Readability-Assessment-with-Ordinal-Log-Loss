@@ -28,19 +28,19 @@ Most of the code is based on https://github.com/yjang43/pushingonreadability_tra
 ```bash
 python kfold.py --corpus_path mainland.csv --corpus_name mainland
 ```
-- Stratified folds of data will save under file name _"data/mainland.{k}.{type}.csv"_.
+- Stratified folds of data will save under file name _"data/onestop.{k}.{type}.csv"_.
 _k_ means _k_-th of the K-Fold and _type_ is either train, valid, or test.
 
 
-3. Fine-tune on dataset with pretrained model.
+3. Fine-tune on dataset with pretrained model using train{onestop}{loss-type}.py file from code folder.
 ```bash
-python train.py --corpus_name mainland --model chinese-macbert-large --learning_rate 2e-5
+python train{onestop}{loss-type}.py --corpus_name onestop --model chinese-macbert-large --learning_rate 2e-5
 ```
 
 4. Collect output probability with a trained model.
 
 ```bash
-python inference.py --checkpoint_path checkpoint/mainland.chinese-macbert-large.0.14 --data_path data/mainland.0.test.csv
+python inference.py --checkpoint_path checkpoint/onestop.chinese-macbert-large.0.14 --data_path data/onestop.0.test.csv
 ```
 
 5. Collect output probability for each grade.
