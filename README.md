@@ -22,25 +22,22 @@ For Chinese experiments, we use the learning rate of 2e-5 for MacBERT.
 # How to Run
 Most of the code is based on https://github.com/yjang43/pushingonreadability_transformers
 
-1. Go to pushingonreadability_transformers-master folder
+1. Copy and go to pushingonreadability_transformers-master folder
 
-2. Create 5-Fold of a dataset for training.
-```bash
-python kfold.py --corpus_path mainland.csv --corpus_name mainland
-```
+2. 5-Fold of a dataset in data folder.
 - Stratified folds of data will save under file name _"data/onestop.{k}.{type}.csv"_.
 _k_ means _k_-th of the K-Fold and _type_ is either train, valid, or test.
 
 
-3. Fine-tune on dataset with pretrained model using train{onestop}{loss-type}.py file from code folder.
+3. Fine-tune on dataset with pretrained model using train{corpus-name}{loss-type}.py file from "code" folder.
 ```bash
-python train{onestop}{loss-type}.py --corpus_name onestop --model chinese-macbert-large --learning_rate 2e-5
+python trainOnestopOLL1.py --corpus_name onestop --model bert --learning_rate 2e-5
 ```
 
 4. Collect output probability with a trained model.
 
 ```bash
-python inference.py --checkpoint_path checkpoint/onestop.chinese-macbert-large.0.14 --data_path data/onestop.0.test.csv
+python inference.py --checkpoint_path checkpoint/onestop.bert.0.14 --data_path data/onestop.0.test.csv
 ```
 
 5. Collect output probability for each grade.
